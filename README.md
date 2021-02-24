@@ -12,14 +12,14 @@ WordPress-тема оформления сайта интернет-магази
 
 `git clone https://github.com/iceslam/FourTacts.git`
 
-3. Выбрать тему из списка доступных: ПУ -> Внешний вид -> Темы -> Полигон22 -> Активировать
+3. Выбрать тему из списка доступных: ПУ -> Внешний вид -> Темы -> 4 Такта -> Активировать
 
 ---
 
 ##### Информация о разработчике
 
-* Разработчик: [IceSlam](https://iceslam.ru/ "IceSlam")
-* Верстальщик: [l0stvayne111](https://github.com/l0stvayne111 "l0stvayne111")
+* Backend-разработчик: [IceSlam](https://iceslam.ru/ "IceSlam")
+* Frontend-разработчик: [l0stvayne111](https://github.com/l0stvayne111 "l0stvayne111")
 * Компания-разработчик: [ИА Альянс+](https://alianscompany.ru "Интернет-агентство Альянс+")
 * Версия: 1.0.0
 * Инструменты: FlexBox, UIKit 3.6.16, FontAwesome 5.15.2
