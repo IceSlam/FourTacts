@@ -2,7 +2,3 @@
 .idea
 .gitattributes
 .stylelintrc.json
-composer.json
-phpcs.xml.dist
-readme.txt
-package.json
