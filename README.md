@@ -10,7 +10,7 @@ WordPress-тема оформления сайта интернет-магази
 
 2. При помощи консольной команды Git копируем тему из репозитория**:
 
-`git clone https://github.com/iceslam/FourTacts.git`
+`git clone https://github.com/iceslam/fourtact.git`
 
 3. Выбрать тему из списка доступных: ПУ -> Внешний вид -> Темы -> 4 Такта -> Активировать
 
