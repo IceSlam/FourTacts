@@ -1,0 +1,17 @@
+//////////////////////////////////////////////////////
+//////////// === Main theme SCSS file === ////////////
+//////////////////////////////////////////////////////
+
+/* Fonts */
+
+@import "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap";
+
+/* System styles and Frameworks */
+
+@import "fontawesome"; // FontAwesome 5.15.2 Free
+@import "uikit"; // UIKit 3.6.17
+
+/* Theme styles */
+
+@import "main"; //Main theme styles
+@import "media"; //Theme media queries

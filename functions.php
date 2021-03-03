@@ -184,3 +184,113 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/*
+=================================================================================
+-------------- Логотип в админбаре (Custom adminbar logo) -----------------------
+=================================================================================
+*/
+
+function fourtact_custom_logo() {
+    echo '
+	<style type="text/css">
+	#wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before {
+	display:inline-block;
+	background-image: url(' . get_bloginfo('stylesheet_directory') . '/assets/img/icons/logo.svg) !important;
+	background-position: 0 0;
+	width:20px !important;
+	height: 20px !important;
+	color:rgba(0, 0, 0, 0);
+	-webkit-background-size: cover;
+	background-size: cover;
+	}
+	#wpadminbar #wp-admin-bar-wp-logo.hover > .ab-item .ab-icon {
+	background-position: center;
+	}
+	</style>
+';
+}
+add_action('wp_before_admin_bar_render', 'fourtact_custom_logo');
+
+function remove_footer_admin () {
+    echo '<p>Тема ';
+    echo wp_get_theme();
+    echo ' разработана <a href="https://iceslam.ru" target="_blank">IceSlam</a> в компании <a href="https://alianscompany.ru" target="_blank">Альянс+</a>. Работает на WordPress</p>';
+}
+add_filter('admin_footer_text', 'remove_footer_admin');
+
+/*
+=================================================================================
+--------------------- Форматирование вывода аннотации ---------------------------
+-------------------------- Formatting the excerpt -------------------------------
+=================================================================================
+*/
+
+add_filter('excerpt_more', function($more) {
+    return '...';
+});
+
+/*
+=================================================================================
+------------------ Изменение логотипа при входе в админку -----------------------
+--------------------------- Admin login page logo -------------------------------
+=================================================================================
+*/
+
+function my_login_logo(){
+    echo '
+   <style type="text/css">
+        #login h1 a { background: url('. get_template_directory_uri().'/assets/img/icons/logo.svg) no-repeat 0 0 !important; -webkit-background-size: contain !important;background-size: contain !important;height: 128px;width: auto;background-position: center !important; }
+    </style>';
+}
+add_action('login_head', 'my_login_logo');
+
+/*
+=================================================================================
+-------------- Страница пареметров темы (Custome theme params) ------------------
+=================================================================================
+*/
+
+if( function_exists('acf_add_options_page') ) {
+
+    acf_add_options_page(array(
+        'page_title' 	=> "Настройки темы 4 Такта",
+        'menu_title'	=> 'Настройки темы',
+        'menu_slug' 	=> '4takt-custom-settings',
+        'capability'	=> 'edit_posts',
+        'redirect'		=> false
+    ));
+
+}
+
+add_filter('acf/options_page/settings', 'my_acf_options_page_settings');
+
+/*
+=================================================================================
+------------------ Удаление разделов из меню админки ----------------------------
+-------------------- Removing links from admin menu -----------------------------
+=================================================================================
+*/
+
+add_action('admin_menu', 'remove_admin_menu');
+function remove_admin_menu() {
+    remove_menu_page('edit.php');
+    remove_menu_page('tools.php');
+    remove_menu_page('edit-comments.php');
+//    remove_menu_page('themes.php');
+//    remove_menu_page('plugins.php');
+    remove_menu_page('users.php');
+    remove_menu_page( 'options-general.php');
+    remove_menu_page( 'duplicator' );
+    remove_menu_page( 'wc-admin' );
+    remove_menu_page( 'edit.php?post_type=acf-field-group' );
+}
+
+/*
+=================================================================================
+----------------------- Удаление Frontend-админбара -----------------------------
+----------------------- Removing Frontend-adminbar ------------------------------
+=================================================================================
+*/
+
+add_filter('show_admin_bar', '__return_false');
