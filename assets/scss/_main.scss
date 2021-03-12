@@ -716,6 +716,13 @@ $mainGray: #2E2E2E;
           font-weight: bold;
           font-family: 'Nunito Sans', sans-serif;
 
+          li + li {
+            &:before {
+              content: '/';
+              margin: 0 1.75rem;
+            }
+          }
+
           a {
             color: #9b9b9b;
             text-decoration: none;

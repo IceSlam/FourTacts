@@ -20685,6 +20685,10 @@ body {
 		font-weight: bold;
 		font-family: "Nunito Sans", sans-serif;
 }
+.main-footer .container .logo-and-breadcrumb .breadcrumb .breadcrumb-list li + li:before {
+		content: "/";
+		margin: 0 1.75rem;
+}
 .main-footer .container .logo-and-breadcrumb .breadcrumb .breadcrumb-list a {
 		color: #9b9b9b;
 		text-decoration: none;
