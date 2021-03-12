@@ -214,7 +214,7 @@
     <div class="container">
       <div class="logo-and-info">
         <div class="logo-box">
-          <a href="<? home_url(); ?>"><img src="<? echo get_template_directory_uri() . '/assets/img/icons/logo.svg'; ?>" alt="<? bloginfo('name'); ?>" class="logo"></a>
+          <a href="<?php echo get_home_url(); ?>"><img src="<? echo get_template_directory_uri() . '/assets/img/icons/logo.svg'; ?>" alt="<? bloginfo('name'); ?>" class="logo"></a>
           <h1 class="logo-text" style="max-width: 319px;">
             <? the_field('theme_description', 'option'); ?>
           </h1>
@@ -246,7 +246,7 @@
           <ul class="uk-navbar-nav">
             <li>
               <a href="" class="button-nav"><img src="<? echo get_template_directory_uri() . '/assets/img/icons/menu-icon.svg'; ?>" alt="Каталог товаров">Каталог товаров</a>
-              <div class="uk-navbar-dropdown uk-open">
+              <div class="uk-navbar-dropdown" uk-dropdown="mode: hover">
                 <ul class="uk-nav uk-navbar-dropdown-nav">
                   <li class="kategory-item">
                     <a href="category-catalog.html" title="Техника">

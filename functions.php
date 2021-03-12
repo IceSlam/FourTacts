@@ -132,6 +132,8 @@ function fourtact_scripts() {
 	wp_style_add_data( 'fourtact-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'fourtact-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'uikit', '//cdn.jsdelivr.net/npm/uikit@3.6.15/dist/js/uikit.min.js', array(), 3.6, true );
+    wp_enqueue_script( 'uikit', '//cdn.jsdelivr.net/npm/uikit@3.6.15/dist/js/uikit-icons.min.js', array(), 3.6, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -245,15 +247,15 @@ add_action('login_head', 'my_login_logo');
 
 add_action('admin_menu', 'remove_admin_menu');
 function remove_admin_menu() {
-    remove_menu_page('edit.php');
-    remove_menu_page('tools.php');
-    remove_menu_page('edit-comments.php');
-//    remove_menu_page('themes.php');
+//    remove_menu_page('edit.php');
+//    remove_menu_page('tools.php');
+//    remove_menu_page('edit-comments.php');
+//   remove_menu_page('themes.php');
 //    remove_menu_page('plugins.php');
-    remove_menu_page('users.php');
+//    remove_menu_page('users.php');
 //    remove_menu_page( 'options-general.php');
-    remove_menu_page( 'duplicator' );
-    remove_menu_page( 'wc-admin' );
+//    remove_menu_page( 'duplicator' );
+//    remove_menu_page( 'wc-admin' );
 //    remove_menu_page( 'edit.php?post_type=acf-field-group' );
 }
 
@@ -264,4 +266,4 @@ function remove_admin_menu() {
 =================================================================================
 */
 
-add_filter('show_admin_bar', '__return_false');
+//add_filter('show_admin_bar', '__return_false');

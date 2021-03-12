@@ -37,7 +37,7 @@
 
     <div class="copyright-and-info">
       <div class="copyright">
-        © «4 такта» 2020. Все права защищены. Использование информации возможно<br>
+        © «4 такта» <?php echo date ( 'Y' ) ; ?>. Все права защищены. Использование информации возможно<br>
         только с письменного согласования владельцев интернет-ресурса
       </div>
 
@@ -63,7 +63,7 @@
           </div>
           <div class="mail">
             <img src="<? echo get_template_directory_uri() . '/assets/img/icons/email.svg'; ?>" alt="">
-            <a href="mailto:artem-kazakov@mail.ru">artem-kazakov@mail.ru</a>
+            <a href="mailto:<? the_field('theme_email', 'option'); ?>"><? the_field('theme_email', 'option'); ?></a>
           </div>
         </div>
       </div>
