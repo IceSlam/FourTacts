@@ -22,7 +22,7 @@ WordPress-тема оформления сайта интернет-магази
 * Frontend-разработчик: [l0stvayne111](https://github.com/l0stvayne111 "l0stvayne111")
 * Компания-разработчик: [ИА Альянс+](https://alianscompany.ru "Интернет-агентство Альянс+")
 * Версия: 1.0.0
-* Инструменты: FlexBox, UIKit 3.6.16, FontAwesome 5.15.2
+* Инструменты: FlexBox, UIKit 3.6.17, FontAwesome 5.15.2
 
 ---
 

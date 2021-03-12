@@ -17,7 +17,7 @@
 
 
       <div class="logo-box">
-        <a href="<? home_url(); ?>"><img src="<? the_field('theme_logo', 'option'); ?>" alt="<? bloginfo('name'); ?>" class="logo" style="width: 200px;height: auto;"></a>
+        <a href="<? echo get_home_url(); ?>"><img src="<? the_field('theme_logo', 'option'); ?>" alt="<? bloginfo('name'); ?>" class="logo" style="width: 200px;height: auto;"></a>
         <h1 class="logo-text" style="margin: 0 2rem;">
           <? the_field('theme_description', 'option'); ?>
         </h1>

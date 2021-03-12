@@ -20934,7 +20934,8 @@ body {
 		position: absolute;
 		z-index: 10;
 		color: #fff;
-		width: 40%;
+		width: 100%;
+		max-width: 40%;
 		left: 50px;
 		top: 40px;
 		transition: 0.5s all ease;

@@ -31,7 +31,7 @@
           <div class="logo-box">
             <img src="<? the_field('theme_logo', 'option'); ?>" alt="<? bloginfo('name'); ?>" class="logo" style="width: 100px;">
             <h1 class="logo-text">
-              <a href="<? home_url(); ?>">
+              <a href="<?php echo get_home_url(); ?>">
                 <? the_field('theme_description', 'option'); ?>
               </a>
             </h1>
