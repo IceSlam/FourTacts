@@ -27,7 +27,6 @@
             <div class="slider-box" uk-slider="autoplay: true;autoplay-interval: 10000">
               <div class="uk-position-relative uk-visible-toggle uk-light slider" tabindex="-1">
                 <ul class="uk-slider-items uk-child-width-1-1 uk-child-width-1-1@s uk-child-width-1-1@m">
-
                     <?php while ( have_rows('home_slides') ) : the_row(); ?>
                       <li class="uk-cover-container special-offer" style="background: url(<? the_sub_field('img'); ?>);background-position: center;background-repeat: no-repeat;-webkit-background-size: cover;background-size: cover;">
                         <h2><? the_sub_field('title'); ?></h2>
@@ -45,43 +44,17 @@
         <section id="advantages">
           <div class="container">
             <div class="advantages-items">
-              <div class="advantages-item">
-                <div class="icon">
-                  <img src="img/icons/shopping-cart.svg" alt="">
-                </div>
-                <div class="text">
-                  <h3>Широкий ассортимент</h3>
-                  <p>Большой выбор товаров в наличии</p>
-                </div>
-              </div>
-              <div class="advantages-item">
-                <div class="icon">
-                  <img src="img/icons/delivery-truck.svg" alt="">
-                </div>
-                <div class="text">
-                  <h3>Быстрая доставка</h3>
-                  <p>Доставка в любой регион России</p>
-                </div>
-              </div>
-              <div class="advantages-item">
-                <div class="icon">
-                  <img src="img/icons/gear.svg" alt="">
-                </div>
-                <div class="text">
-                  <h3>Надежные детали</h3>
-                  <p>Проверенное качество от мировых производителей</p>
-                </div>
-              </div>
-              <div class="advantages-item">
-                <div class="icon">
-                  <img src="img/icons/wallet.svg" alt="">
-                </div>
-                <div class="text">
-                  <h3>Доступные цены</h3>
-                  <p>Стоимость на товары
-                    от поставщиков</p>
-                </div>
-              </div>
+                <?php while ( have_rows('home_advantages') ) : the_row(); ?>
+                  <div class="advantages-item">
+                    <div class="icon">
+                      <img src="<? the_sub_field('icon'); ?>" alt="">
+                    </div>
+                    <div class="text">
+                      <h3><? the_sub_field('title'); ?></h3>
+                      <p><? the_sub_field('description'); ?></p>
+                    </div>
+                  </div>
+                <?php endwhile; ?>
             </div>
           </div>
         </section>
@@ -275,43 +248,7 @@
 
                     <? the_content(); ?>
 
-                    <p class="uk-text-lead">Lorem ipsum dolor sit amet.</p>
-                    <p class="text">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque officia perspiciatis
-                      rem. Atque eius eos nam natus officiis omnis porro, quas ratione, suscipit veniam voluptas
-                      voluptatum. Ad adipisci commodi cum distinctio doloribus, earum eius eos fugiat harum hic iste
-                      nam necessitatibus officia officiis omnis optio quisquam quos rem repellendus ullam.
-                    </p>
-
-                    <p class="text">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque officia perspiciatis
-                      rem. Atque eius eos nam natus officiis omnis porro, quas ratione, suscipit veniam voluptas
-                      voluptatum. Ad adipisci commodi cum distinctio doloribus, earum eius eos fugiat harum hic iste
-                      nam necessitatibus officia officiis omnis optio quisquam quos rem repellendus ullam.
-                    </p>
-
-                    <p class="text">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque officia perspiciatis
-                      rem. Atque eius eos nam natus officiis omnis porro, quas ratione, suscipit veniam voluptas
-                      voluptatum. Ad adipisci commodi cum distinctio doloribus, earum eius eos fugiat harum hic iste
-                      nam necessitatibus officia officiis omnis optio quisquam quos rem repellendus ullam.
-                    </p>
-
-                    <p class="text">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque officia perspiciatis
-                      rem. Atque eius eos nam natus officiis omnis porro, quas ratione, suscipit veniam voluptas
-                      voluptatum. Ad adipisci commodi cum distinctio doloribus, earum eius eos fugiat harum hic iste
-                      nam necessitatibus officia officiis omnis optio quisquam quos rem repellendus ullam.
-                    </p>
-
-                    <p class="text">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque officia perspiciatis
-                      rem. Atque eius eos nam natus officiis omnis porro, quas ratione, suscipit veniam voluptas
-                      voluptatum. Ad adipisci commodi cum distinctio doloribus, earum eius eos fugiat harum hic iste
-                      nam necessitatibus officia officiis omnis optio quisquam quos rem repellendus ullam.
-                    </p>
                   </div>
-
                 </div>
               </div>
             </div>
