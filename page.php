@@ -138,20 +138,8 @@
               </div>
 
               <div class="form">
-                <form action="">
-                  <h3>Оставить заявку</h3>
-                  <input type="text" placeholder="Имя" required>
-                  <input type="tel" placeholder="Телефон" required>
-                  <input type="email" placeholder="E-mail" required>
-                  <div class="checkbox">
-                    <label class="custom-checkbox">
-                      <input type="checkbox">
-                      <span>Подтверждаю согласие на обработку своих<br>
-                            персональных данных</span>
-                    </label>
-                  </div>
-                  <button type="submit">Каталог товаров</button>
-                </form>
+                <h3>Оставить заявку</h3>
+                  <? echo do_shortcode( '[contact-form-7 id="113" title="Запрос прайс листа"]' ); ?>
               </div>
 
             </div>

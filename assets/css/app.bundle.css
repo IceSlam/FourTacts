@@ -25033,9 +25033,55 @@ body {
 		display: flex;
 }
 
-.map-and-form-box .form button:hover {
+.map-and-form-box .map {
+		max-width: 768px;
+		width: 100%;
+}
+.map-and-form-box .form {
+		max-width: 454px;
+		width: 100%;
+		padding: 10px 40px !important;
+}
+.map-and-form-box .form h3 {
+		margin-bottom: 1.5rem;
+		margin-top: 1.5rem;
+}
+.map-and-form-box .form input[type=submit] {
+		font-weight: bold;
+		font-size: 17px !important;
+		color: #fff !important;
+		background: linear-gradient(180deg, #DB1414 0%, #BA0D0D 100%) !important;
+		border-radius: 4px !important;
+		border: 0 !important;
+		outline: 0 !important;
+		padding: 15px 40px !important;
+		cursor: pointer !important;
+		display: block !important;
+		margin-top: 0;
+		margin-bottom: 0;
+		position: relative;
+		transition: 0.5s;
+		overflow: hidden;
+		max-width: 228px;
+}
+.map-and-form-box .form input[type=submit]:hover {
 		border-radius: 4px !important;
 		background: linear-gradient(180deg, #DB1414 0%, #DB1414 100%) !important;
+}
+.map-and-form-box .form input[type=submit]:disabled {
+		cursor: not-allowed !important;
+		opacity: 0.5;
+}
+.map-and-form-box .checkbox {
+		display: flex;
+}
+.map-and-form-box .checkbox .wpcf7-form-control-wrap {
+		display: flex;
+		align-items: center;
+}
+.map-and-form-box .checkbox .policy {
+		line-height: 1;
+		color: #000;
 }
 
 .main-header .breadcrumb .breadcrumb-list,
