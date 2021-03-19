@@ -68,124 +68,54 @@
               <div class="uk-position-relative uk-visible-toggle uk-light slider" tabindex="-1" uk-slider>
 
                 <ul class="uk-slider-items uk-child-width-1-3@s uk-child-width-1-5@m">
-                  <li>
-                    <div class="goods-card">
-                      <div class="img-card uk-cover-container">
-                        <img src="img/index/item-1.jpg" alt="" uk-cover>
-                        <a class="uk-transform-center uk-position-absolute marker" href="#" uk-marker></a>
-                      </div>
-                      <div class="name-card">
-                        <a href="">Бейсболка FLY RACING INVERSION</a>
-                      </div>
-                      <div class="price-card">
-                        <p><span>1 600</span> руб.</p>
-                      </div>
-                      <div class="btn-block">
-                        <button class="add">в корзину</button>
-                        <a href="" class="more">подробнее</a>
-                      </div>
-                    </div>
-                  </li>
+                    <?
+                    global $product;
+                    $args = array(
+                        'post_type'      => 'product',
+                        'post_status'    => 'publish',
+                        'posts_per_page' => - 1,
+                    );
 
+                    $query = new WP_Query( $args );
+                    if ( $query->have_posts() ) {
+                        while ( $query->have_posts() ) {
+                            $query->the_post(); ?>
+                          <li>
+                            <div class="goods-card">
+                              <div class="img-card uk-cover-container">
+                                <? $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($product->get_id()), 'large'); ?>
+                                <img src="<?php echo $large_image_url[0]; ?>" alt="<?php the_title(); ?>" uk-cover>
+                                <a class="uk-transform-center uk-position-absolute marker" href="<?php the_permalink(); ?>" uk-marker></a>
+                              </div>
+                              <div class="name-card">
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                              </div>
+                              <div class="price-card">
+                                <p><span><? echo number_format($product->get_price(), 0, ',', ' ') ?></span> руб.</p>
+                              </div>
+                              <div class="btn-block">
+                                  <?
+                                  global $product;
+                                  if ( $product->is_in_stock() ) : ?>
+                                      <?php do_action( 'woocommerce_before_add_to_cart_form' ); ?>
+                                    <form class="cart" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data'>
+                                        <?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
+                                      <button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt add"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+                                        <?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
+                                    </form>
+                                      <?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
+                                  <?php endif; ?>
+                                <a href="<?php the_permalink(); ?>" class="more">подробнее</a>
+                              </div>
+                            </div>
+                          </li>
+                        <?  }
+                    } else {
+                        echo '<p class="text-center">Товаров не найдено</p>';
+                    }
 
-                  <li>
-                    <div class="goods-card">
-                      <div class="img-card uk-cover-container">
-                        <img src="img/index/item-1.jpg" alt="" uk-cover>
-                        <a class="uk-transform-center uk-position-absolute marker" href="#" uk-marker></a>
-                      </div>
-                      <div class="name-card">
-                        <a href="">Бейсболка FLY RACING INVERSION</a>
-                      </div>
-                      <div class="price-card">
-                        <p><span>1 600</span> руб.</p>
-                      </div>
-                      <div class="btn-block">
-                        <button class="add">в корзину</button>
-                        <a href="" class="more">подробнее</a>
-                      </div>
-                    </div>
-                  </li>
-
-
-                  <li>
-                    <div class="goods-card">
-                      <div class="img-card uk-cover-container">
-                        <img src="img/index/item-1.jpg" alt="" uk-cover>
-                        <a class="uk-transform-center uk-position-absolute marker" href="#" uk-marker></a>
-                      </div>
-                      <div class="name-card">
-                        <a href="">Бейсболка FLY RACING INVERSION</a>
-                      </div>
-                      <div class="price-card">
-                        <p><span>1 600</span> руб.</p>
-                      </div>
-                      <div class="btn-block">
-                        <button class="add">в корзину</button>
-                        <a href="" class="more">подробнее</a>
-                      </div>
-                    </div>
-                  </li>
-
-
-                  <li>
-                    <div class="goods-card">
-                      <div class="img-card uk-cover-container">
-                        <img src="img/index/item-1.jpg" alt="" uk-cover>
-                        <a class="uk-transform-center uk-position-absolute marker" href="#" uk-marker></a>
-                      </div>
-                      <div class="name-card">
-                        <a href="">Бейсболка FLY RACING INVERSION</a>
-                      </div>
-                      <div class="price-card">
-                        <p><span>1 600</span> руб.</p>
-                      </div>
-                      <div class="btn-block">
-                        <button class="add">в корзину</button>
-                        <a href="" class="more">подробнее</a>
-                      </div>
-                    </div>
-                  </li>
-
-
-                  <li>
-                    <div class="goods-card">
-                      <div class="img-card uk-cover-container">
-                        <img src="img/index/item-1.jpg" alt="" uk-cover>
-                        <a class="uk-transform-center uk-position-absolute marker" href="#" uk-marker></a>
-                      </div>
-                      <div class="name-card">
-                        <a href="">Бейсболка FLY RACING INVERSION</a>
-                      </div>
-                      <div class="price-card">
-                        <p><span>1 600</span> руб.</p>
-                      </div>
-                      <div class="btn-block">
-                        <button class="add">в корзину</button>
-                        <a href="" class="more">подробнее</a>
-                      </div>
-                    </div>
-                  </li>
-
-
-                  <li>
-                    <div class="goods-card">
-                      <div class="img-card uk-cover-container">
-                        <img src="img/index/item-1.jpg" alt="" uk-cover>
-                        <a class="uk-transform-center uk-position-absolute marker" href="#" uk-marker></a>
-                      </div>
-                      <div class="name-card">
-                        <a href="">Бейсболка FLY RACING INVERSION</a>
-                      </div>
-                      <div class="price-card">
-                        <p><span>1 600</span> руб.</p>
-                      </div>
-                      <div class="btn-block">
-                        <button class="add">в корзину</button>
-                        <a href="" class="more">подробнее</a>
-                      </div>
-                    </div>
-                  </li>
+                    wp_reset_postdata();
+                    ?>
 
                 </ul>
 

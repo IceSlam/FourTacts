@@ -423,16 +423,8 @@
             <button type="submit"><i class="fas fa-search"></i></button>
           </form>
         </div>
-        <div class="basket">
-          <div class="price">
-            <span>20 000</span> руб.
-          </div>
-          <div class="basket-icon">
-            <img src="<? echo get_template_directory_uri() . '/assets/img/icons/basket-icon.svg'; ?>" alt="Корзина">
-            <span class="number-of-purchases">2</span>
-          </div>
-          <a href="#"></a>
-        </div>
+
+          <? fourtact_woocommerce_cart_link() ?>
 
       </div>
 

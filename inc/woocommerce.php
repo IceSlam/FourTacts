@@ -171,29 +171,7 @@ if ( ! function_exists( 'fourtact_woocommerce_cart_link_fragment' ) ) {
 }
 add_filter( 'woocommerce_add_to_cart_fragments', 'fourtact_woocommerce_cart_link_fragment' );
 
-if ( ! function_exists( 'fourtact_woocommerce_cart_link' ) ) {
-	/**
-	 * Cart Link.
-	 *
-	 * Displayed a link to the cart including the number of items present and the cart total.
-	 *
-	 * @return void
-	 */
-	function fourtact_woocommerce_cart_link() {
-		?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'fourtact' ); ?>">
-			<?php
-			$item_count_text = sprintf(
-				/* translators: number of items in the mini cart. */
-				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'fourtact' ),
-				WC()->cart->get_cart_contents_count()
-			);
-			?>
-			<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo esc_html( $item_count_text ); ?></span>
-		</a>
-		<?php
-	}
-}
+
 
 if ( ! function_exists( 'fourtact_woocommerce_header_cart' ) ) {
 	/**
@@ -225,3 +203,58 @@ if ( ! function_exists( 'fourtact_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+
+//== WooCommerce Customizing by IceSlam
+
+/// Customize WoocCommerce breadcrumbs
+add_filter( 'woocommerce_breadcrumb_defaults', 'wcc_change_breadcrumb_delimiter' );
+function wcc_change_breadcrumb_delimiter( $defaults ) {
+    // Change the breadcrumb delimeter from '/' to '>'
+    $defaults['delimiter'] = ' asdasda';
+    return $defaults;
+}
+
+// Customize Breadcrumbs wrapper
+add_filter( 'woocommerce_breadcrumb_defaults', 'fourtact_woocommerce_breadcrumbs' );
+function fourtact_woocommerce_breadcrumbs() {
+    return array(
+        'delimiter'   => '',
+        'wrap_before' => '<div class="breadcrumb"><ul class="uk-breadcrumb">',
+        'wrap_after'  => '</ul></div>',
+        'before'      => '<li>',
+        'after'       => '</li>',
+        'home'        => _x( 'Главная', 'breadcrumb', 'woocommerce' ),
+    );
+}
+
+// Customize Product card
+    global $product;
+
+    // Ensure visibility.
+    if ( empty( $product ) || false === wc_get_loop_product_visibility( $product->get_id() ) || ! $product->is_visible() ) {
+        return;
+    }
+
+    $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($product->get_id()), 'large');
+    $product = wc_get_product($product->get_id());
+    ?>
+<li>
+  <div class="goods-card">
+    <div class="img-card uk-cover-container">
+      <img src="<?php echo $large_image_url[0]; ?>" alt="<?php the_title(); ?>" uk-cover/>
+      <a class="uk-transform-center uk-position-absolute marker" href="<?php the_permalink(); ?>" uk-marker></a>
+    </div>
+    <div class="name-card">
+      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+    </div>
+    <div class="price-card">
+      <p><span><? echo number_format($product->get_price(), 0, ',', ' ') ?></span> руб.</p>
+    </div>
+    <div class="btn-block">
+      <button class="add" type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>">в корзину</button>
+      <a href="<?php the_permalink(); ?>" class="more">подробнее</a>
+    </div>
+  </div>
+</li>
+
+?>

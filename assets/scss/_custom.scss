@@ -1,0 +1,96 @@
+// Breadcrumbs Universal
+.breadcrumb {
+  li {
+    color: #666;
+    font-size: 0.875rem;
+    a {
+      color: #000;
+    }
+  }
+}
+
+// Catalog card
+
+.goods-card {
+  &.category {
+    height: auto;
+  }
+  .btn-block {
+    .add {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+// Catalog container
+
+.product {
+  display: flex;
+}
+
+// Form box
+
+.map-and-form-box {
+  .form {
+    button {
+      &:hover {
+        -webkit-border-radius: 4px !important;
+        -moz-border-radius: 4px !important;
+        border-radius: 4px !important;
+        background: linear-gradient(180deg,#DB1414 0%,#DB1414 100%) !important;
+      }
+    }
+  }
+}
+
+// Header and footer main menu
+
+.main-header,
+.main-footer
+{
+  .breadcrumb {
+    .breadcrumb-list {
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      font-size: 11px !important;
+      font-weight: bold;
+      font-family: 'Nunito Sans', sans-serif;
+      li {
+        & + li {
+          &:before {
+            content: "/";
+            margin: 0 1.3125rem;
+            color: #515151;
+          }
+        }
+        a {
+          color: #9b9b9b;
+          text-decoration: none;
+          text-transform: uppercase;
+          transition: .3s all ease;
+          letter-spacing: 0.02em;
+          font-size: 12px !important;
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+// Main page googs slider
+
+.goods-slider {
+  .slider {
+    .uk-slidenav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
