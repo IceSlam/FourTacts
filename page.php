@@ -136,7 +136,6 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1191.5488047109272!2d83.6949679!3d53.3236056!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42dda3c5f6ed706b%3A0x14bd02e7ff94b7b1!2z0YPQuy4g0JLQu9Cw0YHQuNGF0LjQvdGB0LrQsNGPLCA1OdCzLCDQkdCw0YDQvdCw0YPQuywg0JDQu9GC0LDQudGB0LrQuNC5INC60YDQsNC5LCA2NTYwMzE!5e0!3m2!1sru!2sru!4v1612257707595!5m2!1sru!2sru"
                         frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
               </div>
-
               <div class="form">
                 <h3>Оставить заявку</h3>
                   <? echo do_shortcode( '[contact-form-7 id="113" title="Запрос прайс листа"]' ); ?>

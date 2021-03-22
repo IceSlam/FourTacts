@@ -426,6 +426,5 @@
           <? fourtact_woocommerce_cart_link() ?>
       </div>
 
-
     </div>
   </header>
