@@ -132,14 +132,6 @@ do_action( 'woocommerce_before_cart' ); ?>
         ?>
 
         <?php do_action( 'woocommerce_cart_contents' ); ?>
-    <div class="full-price-and-order-product">
-      <div class="full-price">
-        <p class="">Итого: <span class="price">23 800</span> руб.</p>
-      </div>
-      <div class="order-product">
-        <button type="submit">оформить заявку</button>
-      </div>
-    </div>
         <tr>
             <td colspan="6" class="actions">
 

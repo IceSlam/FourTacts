@@ -570,6 +570,7 @@
     }
 
     .price-card {
+      margin-bottom: .5rem;
       p {
         color: #000;
         margin: 0;
@@ -634,6 +635,17 @@
         &>*{
           color: #BC1515;
         }
+      }
+    }
+  }
+  .goods-card {
+    .price-card {
+      margin-bottom: .5rem;
+      p {
+        color: #000;
+        margin: 0;
+        font-weight: 700;
+        font-size: 17px;
       }
     }
   }
@@ -810,7 +822,6 @@
             justify-content: center;
 
             .size-woocommerce_thumbnail {
-              max-width: 50%;
               display: block;
               margin: 0 auto;
             }
@@ -917,7 +928,7 @@
               cursor: pointer !important;
 
               &:hover {
-                color: #bc1515
+                color: #bc1515 !important;
               }
             }
           }
@@ -957,41 +968,44 @@
       }
 
     }
-    .full-price-and-order-product{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 20px;
-      .full-price{
-        p{
-          margin-bottom: 0;
-          font-weight: 700;
-          font-size: 24px;
-          color: #000;
-        }
+  }
+  .full-price-and-order-product{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    .full-price{
+      p{
+        margin-bottom: 0;
+        font-weight: 700;
+        font-size: 24px;
+        color: #000;
       }
-      .order-product{
-        button{
-          border: 0;
-          outline: 0;
-          color: #fff;
-          font-size: 14px;
-          text-transform: uppercase;
-          background: linear-gradient(180deg, #DB1414 0%, #BA0D0D 100%);
-          border-radius: 4px;
-          padding: 15px 30px;
-          cursor: pointer;
-          transition: .5s;
-
-
-          &:hover{
-            border-radius: 35px;
-          }
-
-        }
+      .woocommerce-Price-amount {
+        font-weight: 700 !important;
       }
     }
+    .order-product{
+      .checkout-button {
+        border: 0;
+        outline: 0;
+        color: #fff;
+        font-size: 14px;
+        text-transform: uppercase;
+        background: linear-gradient(180deg, #DB1414 0%, #BA0D0D 100%);
+        border-radius: 4px;
+        padding: 15px 30px;
+        cursor: pointer;
+        transition: .5s;
+        text-decoration: none;
+        font-weight: 700;
+        &:hover{
+          border-radius: 4px;
+          background: linear-gradient(180deg,#DB1414 0%,#DB1414 100%);
+        }
 
+      }
+    }
   }
 }
 
@@ -1018,5 +1032,8 @@ p.no-comments {
     &:after {
       content: '?'
     }
+  }
+  &.woocommerce-notice--info {
+    border-color: #2980b3;
   }
 }

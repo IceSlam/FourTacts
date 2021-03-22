@@ -220,3 +220,13 @@ function fourtact_woocommerce_breadcrumbs() {
 
 remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_result_count', 20 );
 remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+
+add_filter('woocommerce_cart_needs_payment', 'disabled_payment');
+function disabled_payment () {
+    return false;
+}
+
+add_filter('woocommerce_checkout_order_review', 'disabled_checkout');
+function disabled_checkout () {
+    return false;
+}

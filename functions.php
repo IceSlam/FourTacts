@@ -267,3 +267,4 @@ function remove_admin_menu() {
 */
 
 //add_filter('show_admin_bar', '__return_false');
+

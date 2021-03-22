@@ -25462,6 +25462,9 @@ body {
 .catalog-items .catalog-item .name-card a span {
 		text-transform: uppercase;
 }
+.catalog-items .catalog-item .price-card {
+		margin-bottom: 0.5rem;
+}
 .catalog-items .catalog-item .price-card p {
 		color: #000;
 		margin: 0;
@@ -25513,6 +25516,15 @@ body {
 }
 .catalog-items .catalog-item:hover .name-card > * {
 		color: #BC1515;
+}
+.catalog-items .goods-card .price-card {
+		margin-bottom: 0.5rem;
+}
+.catalog-items .goods-card .price-card p {
+		color: #000;
+		margin: 0;
+		font-weight: 700;
+		font-size: 17px;
 }
 
 .price-form-info .price {
@@ -25672,7 +25684,6 @@ body {
 		justify-content: center;
 }
 .form-block form .shopping-items .shopping-item .img-item .uk-cover-container .size-woocommerce_thumbnail {
-		max-width: 50%;
 		display: block;
 		margin: 0 auto;
 }
@@ -25771,7 +25782,7 @@ body {
 }
 .form-block form .shopping-items .shopping-item .item-quantity .quantity-block .qib-button:hover,
 .form-block form .shopping-items .shopping-item .item-quantity .qib-container .qib-button:hover {
-		color: #bc1515;
+		color: #bc1515 !important;
 }
 .form-block form .shopping-items .shopping-item .item-summa {
 		width: 12%;
@@ -25799,19 +25810,22 @@ body {
 .form-block form .shopping-items .shopping-item .item-delete button .text-button-delete {
 		display: none;
 }
-.form-block form .full-price-and-order-product {
+.form-block .full-price-and-order-product {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		margin-top: 20px;
 }
-.form-block form .full-price-and-order-product .full-price p {
+.form-block .full-price-and-order-product .full-price p {
 		margin-bottom: 0;
 		font-weight: 700;
 		font-size: 24px;
 		color: #000;
 }
-.form-block form .full-price-and-order-product .order-product button {
+.form-block .full-price-and-order-product .full-price .woocommerce-Price-amount {
+		font-weight: 700 !important;
+}
+.form-block .full-price-and-order-product .order-product .checkout-button {
 		border: 0;
 		outline: 0;
 		color: #fff;
@@ -25822,9 +25836,12 @@ body {
 		padding: 15px 30px;
 		cursor: pointer;
 		transition: 0.5s;
+		text-decoration: none;
+		font-weight: 700;
 }
-.form-block form .full-price-and-order-product .order-product button:hover {
-		border-radius: 35px;
+.form-block .full-price-and-order-product .order-product .checkout-button:hover {
+		border-radius: 4px;
+		background: linear-gradient(180deg, #DB1414 0%, #DB1414 100%);
 }
 
 .woocommerce-message,
@@ -25867,5 +25884,12 @@ p.no-comments .wc-forward {
 .woocommerce-noreviews .wc-forward:after,
 p.no-comments .wc-forward:after {
 		content: "?";
+}
+.woocommerce-message.woocommerce-notice--info,
+.woocommerce-info.woocommerce-notice--info,
+.woocommerce-error.woocommerce-notice--info,
+.woocommerce-noreviews.woocommerce-notice--info,
+p.no-comments.woocommerce-notice--info {
+		border-color: #2980b3;
 }
 /*# sourceMappingURL=app.bundle.css.map */
